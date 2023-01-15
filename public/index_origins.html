@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les petits Plats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href=" ./style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">
+        <img id="logo" src="./img/logo.png" alt="Logo Petit Petits Plats" />
+      </a>
+      <section id="recherche">
+        <input
+          id="barreRecherche"
+          type="search"
+          name="recherche"
+          placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+          autocomplete="off"
+        />
+
+        <button id="loupeBtn">
+          <img
+            src="./img/loupe.png"
+            alt="bouton loupe pour lancer la recherche"
+          />
+        </button>
+      </section>
+    </header>
+    <section id="main">
+      <section id="result">
+        <div id="appareilsResult"></div>
+        <div id="ingredientsResult"></div>
+        <div id="ustensilesResult"></div>
+      </section>
+      <section id="tri">
+        <div id="ingredients">
+          <div id="choixTriIngredients">
+            <form class="ingredientsForm">
+              <input
+                name="triIngredients"
+                id="inputIngredients"
+                type="text"
+                placeholder="Ingrédients"
+                autocomplete="off"
+              />
+              <button id="triBtnIngredients">
+                <img
+                  class="imgFlechBas"
+                  src="./img/fleche_bas.png"
+                  alt="bouton flèche pour faire descendre menu déroulant"
+                />
+              </button>
+            </form>
+            <aside id="listIngredients" value="false">
+              <ul id="triIngredientsInput"></ul>
+            </aside>
+          </div>
+        </div>
+        <div id="appareils">
+          <div id="choixTriAppareils">
+            <form class="applianceForm">
+              <input
+                name="triAppareils"
+                id="inputAppareils"
+                type="text"
+                placeholder="Appareil"
+                autocomplete="off"
+              />
+              <button id="triBtnAppareil">
+                <img
+                  class="imgFlechBas"
+                  src="./img/fleche_bas.png"
+                  alt="bouton flèche pour faire descendre menu déroulant"
+                />
+              </button>
+            </form>
+            <aside id="listAppareils" value="false">
+              <ul id="triAppareilsInput"></ul>
+            </aside>
+          </div>
+        </div>
+        <div id="ustensiles">
+          <div id="choixTriUstensiles">
+            <form id="ustensilsForm">
+              <input
+                name="triUstensiles"
+                id="inputUstensiles"
+                type="text"
+                placeholder="Ustensiles"
+                autocomplete="off"
+              />
+              <button id="triBtnUstensiles">
+                <img
+                  class="imgFlechBas"
+                  src="./img/fleche_bas.png"
+                  alt="bouton flèche pour faire descendre menu déroulant"
+                />
+              </button>
+            </form>
+            <aside id="listUstensiles" value="false">
+              <ul id="triUstensilesInput"></ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section id="listeRecettes"></section>
+      <div id="noResults">Nous n'avons trouvé aucun résultat</div>
+    </section>
+    <script src="./src/data.js"></script>
+    <script src="./src/Recettes.js"></script>
+    <script src="./src/rechercheGlobale.js"></script>
+    <script src="./src/generateFilters.js"></script>
+    <script src="./src/rechercheTags.js"></script>
+    <script src="./src/gestionTags.js"></script>
+    <script src="./src/dropbox.js"></script>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
