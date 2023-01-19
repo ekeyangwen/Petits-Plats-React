@@ -1,0 +1,63 @@
+@media screen and (max-width: 576px) {
+  .searchInputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #results {
+    height: 50px;
+  }
+  #themeResults {
+    font-family: Lato;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: left;
+    cursor: pointer;
+    list-style: none;
+    margin-top: 10px;
+  }
+  .themeForm {
+    display: flex;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+  }
+  // #ingredients {
+  //   width: 70%;
+  // }
+  .inputTheme,
+  #ingBlue {
+    background-color: #3282f7;
+    border: none;
+    outline: none;
+    padding: 5px;
+  }
+  .inputTheme {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  #ingBlue,
+  #appGreen,
+  #ustRed {
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 5px;
+  }
+  .inputTheme::placeholder {
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+  }
+  #appliance,
+  #appGreen {
+    background-color: #68d9a4;
+  }
+  #ustensils,
+  #ustRed {
+    background-color: red;
+  }
+}
