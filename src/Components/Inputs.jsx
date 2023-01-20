@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Inputs = ({ inputName, id, arrow }) => {
+const Inputs = ({ inputName, id, arrow, list }) => {
   const [showList, setShowList] = useState(false);
 
   const handleShowList = (e) => {
@@ -35,7 +35,7 @@ const Inputs = ({ inputName, id, arrow }) => {
           value="false"
           className={` ${showList ? "showList" : "hideList"}`}
         >
-          <ul id="themeSortedInput">{inputName}</ul>
+          <ul id="themeSortedInput">{list}</ul>
         </aside>
       </div>
     </section>
