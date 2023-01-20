@@ -15,6 +15,7 @@ const Home = () => {
   }, []);
 
   let recipes = allRecipes.recipes;
+  console.log(recipes);
 
   return (
     <section id="main">
@@ -24,7 +25,12 @@ const Home = () => {
           inputName={"Ingredients"}
           arrow={"ingBlue"}
         />
-        <Inputs id={"appliance"} inputName={"Appareils"} arrow={"appGreen"} />
+        <Inputs
+          id={"appliance"}
+          inputName={"Appareils"}
+          arrow={"appGreen"}
+          // ingredients={recipes.ingredients.ingredient}
+        />
         <Inputs id={"ustensils"} inputName={"Ustensiles"} arrow={"ustRed"} />
       </section>
       <section id="recipesList">

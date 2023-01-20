@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Inputs = ({ inputName, id, arrow }) => {
+  const [showList, setShowList] = useState(false);
+
+  const handleShowList = (e) => {
+    e.preventDefault();
+    setShowList(!showList);
+  };
+  console.log(showList);
+
   return (
     <section id="results">
       <div id="themeResults">
@@ -14,7 +22,7 @@ const Inputs = ({ inputName, id, arrow }) => {
             autoComplete="off"
           />
 
-          <button id={arrow}>
+          <button id={arrow} onClick={handleShowList}>
             <img
               className="arrowDown"
               src="./img/fleche_bas.png"
@@ -22,8 +30,12 @@ const Inputs = ({ inputName, id, arrow }) => {
             />
           </button>
         </form>
-        <aside id="themeList" value="false">
-          <ul id="themeSortedInput"></ul>
+        <aside
+          id="themeList"
+          value="false"
+          className={` ${showList ? "showList" : "hideList"}`}
+        >
+          <ul id="themeSortedInput">{inputName}</ul>
         </aside>
       </div>
     </section>

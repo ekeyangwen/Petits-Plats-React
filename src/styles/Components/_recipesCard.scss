@@ -1,13 +1,13 @@
 @media screen and (max-width: 576px) {
   #recipesList {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 }
 
 .recipe {
   display: flex;
-
+  justify-content: space-between;
   .recipeTitle,
   .time,
   .description {
@@ -26,17 +26,15 @@
   .eachIngredient {
     margin-top: 10px;
   }
-
+  .timeAndDescription {
+    width: 40%;
+  }
   .description {
-    width: 20%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
-  }
-  .time {
-    text-align: center;
   }
   .ingredients {
     display: flex;
@@ -52,5 +50,6 @@
   .recipeAndIngredients {
     display: flex;
     flex-direction: column;
+    width: 80%;
   }
 }

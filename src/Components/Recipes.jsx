@@ -1,7 +1,7 @@
 import React from "react";
 import Ingredient from "./Ingredient";
 
-const Recipes = ({ recipe, id }) => {
+const Recipes = ({ recipe }) => {
   return (
     <section className="recipe">
       <div className="recipeAndIngredients">
