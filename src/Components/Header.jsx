@@ -29,7 +29,7 @@ const Header = () => {
   //     }
   //   }
   // };
-  function verification() {setEnteredValue({ enteredValue: event.target.value })
+  function verification() {
     if (enteredValue.length >= 3) {
       console.log("entrée dans fonction verif");
       console.log(enteredValue.length);
