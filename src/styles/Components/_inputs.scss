@@ -64,18 +64,11 @@
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-    background-color: red;
     font-weight: 700;
     color: #fff;
     position: absolute;
   }
   .hideList {
     display: none;
-  }
-  #themeSortedInput {
-    display: flex;
-    flex-direction: column;
-
-    z-index: 200;
   }
 }

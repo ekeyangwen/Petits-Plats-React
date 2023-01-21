@@ -4,7 +4,7 @@ import Recipes from "../Components/Recipes";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-  const [allRecipes, setAllRecipes] = useState("");
+  const [allRecipes, setAllRecipes] = useState([]);
 
   useEffect(() => {
     fetch("../../../data.json")
@@ -15,53 +15,48 @@ const Home = () => {
   }, []);
 
   let recipes = allRecipes.recipes;
-
-  if (recipes === undefined) {
-    console.log("loading");
+  console.log(recipes);
+  if (allRecipes === undefined && "") {
+    console.log("recipes not found");
   }
 
   return (
     <section id="main">
       <section className="searchInputs">
-        <Inputs
-          id={"ingredients"}
-          inputName={"Ingredients"}
-          background={"ingBlue"}
-          list={
-            recipes &&
-            recipes.length > 0 &&
-            recipes.map((recipeDetails) =>
-              recipeDetails.ingredients.map((ingredientsDetails) => {
-                return ingredientsDetails;
-              })
-            )
-          }
-        />
-        <Inputs
-          id={"appliance"}
-          inputName={"Appareils"}
-          background={"appGreen"}
-          list={
-            recipes &&
-            recipes.length > 0 &&
-            recipes.map((recipeDetails) => recipeDetails.appliance)
-          }
-        />
-
-        <Inputs
-          id={"ustensils"}
-          inputName={"Ustensiles"}
-          background={"ustRed"}
-          list={
-            recipes &&
-            recipes.length > 0 &&
-            recipes.map((recipeDetails) =>
-              recipeDetails.ustensils.map(
-                (ustensilsDetails) => ustensilsDetails
-              )
-            )
-          }
-        />
+        {recipes &&
+          recipes.length > 0 &&
+          recipes.map((recipeDetails) =>
+            recipeDetails.ingredients.map((detailedIngredients) => (
+              <Inputs
+                id={"ingredients"}
+                inputName={"Ingredients"}
+                background={"ingBlue"}
+                listIngredients={detailedIngredients.ingredient}
+              />
+            ))
+          )}
+        {recipes &&
+          recipes.length > 0 &&
+          recipes.map((recipeDetails) => (
+            <Inputs
+              id={"appliance"}
+              inputName={"Appareils"}
+              background={"appGreen"}
+              listAppliances={recipeDetails.appliance}
+            />
+          ))}
+        {recipes &&
+          recipes.length > 0 &&
+          recipes.map((recipeDetails) =>
+            recipeDetails.ustensils.map((ustensilsDetails) => (
+              <Inputs
+                id={"ustensils"}
+                inputName={"Ustensiles"}
+                background={"ustRed"}
+                listUstensils={ustensilsDetails}
+              />
+            ))
+          )}
       </section>
 
       <section id="recipesList">

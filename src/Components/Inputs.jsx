@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
-const Inputs = ({ inputName, id, background, list }) => {
+const Inputs = ({
+  inputName,
+  id,
+  background,
+  listIngredients,
+  listApliances,
+  listUstensils,
+}) => {
   const [showList, setShowList] = useState(false);
 
   const handleShowList = (e) => {
@@ -8,8 +15,7 @@ const Inputs = ({ inputName, id, background, list }) => {
     setShowList(!showList);
   };
 
-  let filteredList = new Set(list);
-  console.log(filteredList);
+  // let list = [...new Set(list)];
 
   return (
     <section id="results">
@@ -37,9 +43,15 @@ const Inputs = ({ inputName, id, background, list }) => {
           className={` ${showList ? "showList" : "hideList"}`}
         >
           <ul id={background}>
-            {filteredList &&
-              filteredList.length > 0 &&
-              filteredList.map((listDetails) => <li>{listDetails}</li>)}
+            <li className="list">{` ${
+              background === "ingBlue"
+                ? listIngredients
+                : background === "appGreen"
+                ? listApliances
+                : background === "ustRed"
+                ? listUstensils
+                : null
+            }`}</li>
           </ul>
         </aside>
       </div>
