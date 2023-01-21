@@ -3,12 +3,6 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const Header = () => {
-<<<<<<< HEAD
-  // let input;
-  // let noResults;
-=======
->>>>>>> be4b668fda166f9e5d5aa46919175de7b873e1eb
-
   const [enteredValue, setEnteredValue] = useState("");
 
   //  onChange={handleChange}
@@ -35,14 +29,11 @@ const Header = () => {
   //   }
   // };
   function verification(event) {
-
-
-     setEnteredValue({ enteredValue: event.target.value });
+    setEnteredValue({ enteredValue: event.target.value });
     if (enteredValue.length >= 3) {
       console.log("entrée dans fonction verif");
       console.log(enteredValue.length);
-    } 
-
+    }
   }
 
   return (
