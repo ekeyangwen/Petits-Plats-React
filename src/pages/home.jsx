@@ -15,45 +15,53 @@ const Home = () => {
   }, []);
 
   let recipes = allRecipes.recipes;
-  console.log(recipes);
 
-  let applianceList =
-    recipes &&
-    recipes.length > 0 &&
-    recipes.map((recipeDetails) => recipeDetails.appliance);
-  console.log(applianceList);
-
-  // let ingredientsList =
-  //   recipes &&
-  //   recipes.length > 0 &&
-  //   recipes.map((recipeDetails) => console.log(recipeDetails));
-  // console.log(ingredientsList);
+  if (recipes === undefined) {
+    console.log("loading");
+  }
 
   return (
     <section id="main">
       <section className="searchInputs">
-        {/* {recipes &&
-          recipes.length > 0 &&
-          recipes.map((recipeDetails) =>
-            recipeDetails.ingredients.map((eachIngredient) => {
-              return console.log(eachIngredient);
-            })
-          )} */}
         <Inputs
           id={"ingredients"}
           inputName={"Ingredients"}
-          arrow={"ingBlue"}
-          // list={eachIngredient.ingredient}
+          background={"ingBlue"}
+          list={
+            recipes &&
+            recipes.length > 0 &&
+            recipes.map((recipeDetails) =>
+              recipeDetails.ingredients.map((ingredientsDetails) => {
+                return ingredientsDetails;
+              })
+            )
+          }
         />
         <Inputs
           id={"appliance"}
           inputName={"Appareils"}
-          arrow={"appGreen"}
-          list={applianceList.map((appliance) => {
-            return appliance;
-          })}
+          background={"appGreen"}
+          list={
+            recipes &&
+            recipes.length > 0 &&
+            recipes.map((recipeDetails) => recipeDetails.appliance)
+          }
         />
-        <Inputs id={"ustensils"} inputName={"Ustensiles"} arrow={"ustRed"} />
+
+        <Inputs
+          id={"ustensils"}
+          inputName={"Ustensiles"}
+          background={"ustRed"}
+          list={
+            recipes &&
+            recipes.length > 0 &&
+            recipes.map((recipeDetails) =>
+              recipeDetails.ustensils.map(
+                (ustensilsDetails) => ustensilsDetails
+              )
+            )
+          }
+        />
       </section>
 
       <section id="recipesList">
