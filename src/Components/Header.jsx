@@ -34,8 +34,7 @@ const Header = () => {
     if (enteredValue.length >= 3) {
       console.log("entrée dans fonction verif");
       console.log(enteredValue.length);
-    } else {
-    }
+    } 
   }
 
   return (
